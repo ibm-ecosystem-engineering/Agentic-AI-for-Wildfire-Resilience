@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildfire Resilience</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>  
+    <script src="{{ url_for('static', filename='script_table.js') }}" defer></script>  
+</head>
+<body>
+    <header class="top-menu">
+        <DIV><h1>Wildfire Resilience</h1></DIV>
+        <DIV><h6>Autonomous Detection, Response & Recovery leveraging Agentic AI</h6></DIV>
+        <nav class="top-nav">
+            <ul>
+                <li><a href="#" >Home</a></li>
+                <li> <a href="{{ url_for('api_main.about') }}">About</a> </li>
+                <li><a href="{{ url_for('api_main.contact') }}">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="layout">
+        <aside class="side-menu">
+            <ul>
+                <li><a href="{{ url_for('api_control_burn.control_burn') }}" data-page="control_burn">Controlled Burn</a></li>
+                <li><a href="{{ url_for('api_llm_text.chat') }}" data-page="Chat">Equipment Inventory</a></li>
+                <li><a href="{{ url_for('api_llm_agent.agent_weather') }}" data-page="Weather">Crew Deployment</a></li>
+                <!-- <li><a href="{{ url_for('api_llm_agent.agent_research') }}" data-page="Research">Research</a></li>
+                <li><a href="{{ url_for('api_llm_agent.agent_researchpaper') }}" data-page="Research Paper">Research Paper</a></li>
+                <li><a href="{{ url_for('api_llm_agent.agent_csv') }}" data-page="csv">CSV</a></li>
+                <li><a href="{{ url_for('api_main.agb') }}" data-page="AGB">AGB</a></li>  -->
+            </ul>
+        </aside>
+        <main class="main-content" id="main-content">

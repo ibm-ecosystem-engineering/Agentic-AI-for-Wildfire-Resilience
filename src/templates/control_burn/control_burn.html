@@ -1,0 +1,214 @@
+{% include "header.html" %}
+    
+    <div id="top-container" class="chatbot-container">
+        <div class="chatbot-header">
+          <h1>Bushfires Detection</h1>
+        </div>
+          <div class="chat2-input">
+            <p>&nbsp;</p>
+            <label for="options">Select Region &nbsp;&nbsp;</label>
+            <select id="region" name="region" class="chat2-option-box">
+                <option value="NSW">New South Wales (NSW)</option>
+                <option value="VIC">Victoria (VIC)</option>
+                <option value="QLD">Queensland (QLD)</option>
+                <option value="SA">South Australia (SA)</option>
+                <option value="WA">Western Australia (WA)</option>
+                <option value="TAS">Tasmania (TAS)</option>
+                <option value="ACT">Australian Capital Territory (ACT)</option>
+                <option value="NT">Northern Territory (NT)</option>
+            </select>
+
+            <button id="send-button"  onclick="processSend()">Check</button>
+            <p>&nbsp;</p>
+          </div>
+        </div>
+      </div>
+    
+{% include "footer.html" %}
+
+<script>
+
+  function processSend() {
+      const userInput = document.getElementById("region").value;
+      if (userInput) {
+        callMyAPI(userInput);
+      }
+    }
+
+    
+    // Fetch bot response from an external API
+    async function callMyAPI(input) {
+      jsonString = JSON.stringify({ input: input})
+      const API_URL = BASE_API_URL + "/api/control_burn/invoke"; // Replace with your API endpoint
+      try {
+        const response = await fetch(API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            'Accept': 'application/json', 
+
+          },
+          body: jsonString ,
+        })
+    
+        if (!response.ok) {
+          console.error('Error: Failed to fetch response. :  ', error);
+          throw new Error(`Failed to fetch response. Status: ${response.status}`);
+        }
+    
+        const data = await response.json();
+        console.log("data: -->" + JSON.stringify(data, null, 2))
+
+        const result = data.result || "I'm sorry, I couldn't process that."; // Default response
+        // const jsonObject = JSON.parse(result);
+
+        callBackAfterAPI(result);
+      } catch (error) {
+          console.error('Error: Failed to fetch response. :  ', error);
+          callBackAfterAPI("Error: Unable to fetch response from the API.", "bot-message");
+      }
+    }
+
+        
+    function callBackAfterAPI(result) {
+      result.data.forEach(item => {
+          createSection(item)
+        });
+    }
+
+
+  function createSection(data) {
+    
+    // <div class="chatbot2-body">
+    //       <div class="chatbot2-header">
+    //         <h1>Fire Fighting Equipment</h1>
+    //       </div>
+    //         <div id="chat-display" class="chat2-display">
+    //           <div id="equipmentTable"></div>
+    //       </div>
+    //     </div>
+
+    let div1 = document.createElement("div");
+    div1.className = "chatbot2-body";
+
+    let div2 = document.createElement("div");
+    div2.className = "chatbot2-header";
+
+    let div3 = document.createElement("div");
+    div3.className = "chat2-display";
+
+    let div4 = document.createElement("div");
+    let div5 = document.createElement("div");
+
+    // Create an h1 element and set text
+    let heading = document.createElement("h1");
+    heading.textContent = data.city + " :  " + data.date
+
+    // Append h1 to div
+    div1.appendChild(div2);
+    div2.appendChild(heading);
+    div1.appendChild(div3);
+    div3.appendChild(div4);
+    div3.appendChild(div5);
+
+    heading2 = document.createElement("p");
+    heading2.textContent = "Fire Fighting Trucks"
+    heading2.style.textAlign = "center"; 
+    heading2.style.fontWeight = "bold"; 
+    div4.appendChild(heading2);
+
+    // Append table to container
+    myTable = createSectionTable(data.trucks)
+    div4.appendChild(myTable);
+
+    heading2 = document.createElement("p");
+    heading2.textContent = "Fire Fighting Crews"
+    heading2.style.textAlign = "center"; 
+    heading2.style.fontWeight = "bold"; 
+    div4.appendChild(heading2);
+
+    myTable = createSectionTable(data.crews)
+    div5.appendChild(myTable);
+
+    // Append table to container
+    document.getElementById("main-content").appendChild(div1);
+  }
+
+
+function createSectionTable(data) {
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
+
+    console.log (data)
+
+    // Create table header
+    const headerRow = document.createElement("tr");
+    
+    th = document.createElement("th");
+    th.textContent = "Name";
+    headerRow.appendChild(th);
+
+    th = document.createElement("th");
+    th.textContent = "Description";
+    headerRow.appendChild(th);
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create table body
+    data.forEach(item => {
+        const row = document.createElement("tr");
+
+        td = document.createElement("td");
+        td.textContent = item.name;
+        row.appendChild(td);
+
+        td = document.createElement("td");
+        td.textContent = item.description;
+        row.appendChild(td);        
+
+        tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+
+    return table;
+}
+
+
+
+
+function createSectionTable222(data) {
+    const table = document.createElement("table");
+    const thead = document.createElement("thead");
+    const tbody = document.createElement("tbody");
+
+    console.log (data)
+
+    // Create table header
+    const headerRow = document.createElement("tr");
+    Object.keys(data[0]).forEach(key => {
+        const th = document.createElement("th");
+        th.textContent = key;
+        headerRow.appendChild(th);
+    });
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    // Create table body
+    data.forEach(item => {
+        const row = document.createElement("tr");
+        Object.values(item).forEach(value => {
+            const td = document.createElement("td");
+            td.textContent = value;
+            row.appendChild(td);
+        });
+        tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+
+    return table;
+}
+
+</script>

@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "city": "Bogan",
+            "date": "19-Feb-2025",
+            "trucks": [
+                {
+                    "name": "Category 1 Tanker",
+                    "description": "Large bushfire tanker with 4WD capability"
+                },
+                {
+                    "name": "Category 5 Tanker",
+                    "description": "Light bushfire truck, often used in rough terrain"
+                },
+                {
+                    "name": "Bulk Water Tanker (BWT)",
+                    "description": "Large water-carrying truck for supporting operations"
+                }
+            ],
+            "crews": [
+                {
+                    "name": "Bushfire Firefighting Crew",
+                    "description": "Specializes in controlling and extinguishing bushfires in rural areas."
+                },
+                {
+                    "name": "Bulk Water Tanker Crew",
+                    "description": "Highly trained crew deployed to inaccessible bushfire areas, often via helicopter."
+                }
+            ]
+        },
+        {
+            "city": "Temora",
+            "date": "20-Feb-2025",
+            "trucks": [
+                {
+                    "name": "Category 2 Tanker",
+                    "description": "Medium-sized bushfire tanker with 4WD"
+                },
+                {
+                    "name": "Category 6 Tanker",
+                    "description": "Smaller, highly maneuverable bushfire truck"
+                },
+                {
+                    "name": "Village Fire Tanker",
+                    "description": "Designed for both bushfires and structural fires"
+                }
+            ],
+            "crews": [
+                {
+                    "name": "Village Firefighting Crew",
+                    "description": "Handles both bushfires and structural fires in rural communities."
+                },
+                {
+                    "name": "Remote Area Firefighting Team (RAFT)",
+                    "description": "Highly trained crew deployed to inaccessible bushfire areas, often via helicopter."
+                }
+            ]
+        },
+        {
+            "city": "Leeton",
+            "date": "21-Feb-2025",
+            "trucks": [
+                {
+                    "name": "Category 9 Tanker",
+                    "description": "Very small, fast-response unit for tight areas"
+                },
+                {
+                    "name": "Aviation Support Vehicler",
+                    "description": "Supports aircraft operations in bushfire areas"
+                }
+            ],
+            "crews": [
+                {
+                    "name": "NSW Parks and Wildlife Service (NPWS) Fire Crews",
+                    "description": "Protects national parks and conservation areas from bushfires."
+                },
+                {
+                    "name": "Remote Area Firefighting Team (RAFT)",
+                    "description": "Highly trained crew deployed to inaccessible bushfire areas, often via helicopter."
+                }
+            ]
+        }
+    ]
+}

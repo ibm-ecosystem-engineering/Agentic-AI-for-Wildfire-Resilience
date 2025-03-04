@@ -1,0 +1,9 @@
+TruckName, TruckDescrption,Availability
+Category 1 Tanker, Large bushfire tanker with 4WD capability,Yes
+Category 2 Tanker, Medium-sized bushfire tanker with 4WD,No
+Category 5 Tanker, Light bushfire truck, often used in rough terrain,No
+Category 6 Tanker, Smaller, highly maneuverable bushfire truck, No
+Category 9 Tanker, Very small, fast-response unit for tight areas, Yes
+Bulk Water Tanker (BWT), Large water-carrying truck for supporting operations, Yes
+Village Fire Tanker, Designed for both bushfires and structural fires, Yes
+Aviation Support Vehicle, Supports aircraft operations in bushfire areas,No

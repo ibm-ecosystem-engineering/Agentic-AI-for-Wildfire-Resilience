@@ -1,0 +1,18 @@
+Crew Name,Description,Availability
+"Bushfire Firefighting Crew","Specializes in controlling and extinguishing bushfires in rural areas.",Yes
+"Village Firefighting Crew","Handles both bushfires and structural fires in rural communities.",No
+"Remote Area Firefighting Team (RAFT)","Highly trained crew deployed to inaccessible bushfire areas, often via helicopter.",Yes
+"Aviation Support Crew","Supports firefighting aircraft for water bombing and aerial fire suppression.",No
+"Incident Management Team (IMT)","Coordinates large-scale fire and emergency response operations.",No
+"Bulk Water Tanker Crew","Operates large water-carrying trucks to support firefighting operations.",Yes
+"Structural Firefighting Crew","Focuses on urban fires, including homes, businesses, and high-rise buildings.",No
+"Hazmat (Hazardous Materials) Crew","Manages chemical spills, gas leaks, and other hazardous situations.",No
+"Rescue Crew","Handles road accidents, building collapses, and other rescue operations.",Yes
+"Aerial Operations Crew","Operates ladder trucks for high-rise firefighting and aerial operations.",No
+"Special Operations Urban Search and Rescue (USAR) Team","Responds to building collapses and major urban rescue incidents.",No
+"Marine Firefighting Team","Specializes in firefighting operations on boats and in harbors.",No
+"Incident Management Team (IMT)","Oversees large-scale operations and incident coordination.",Yes
+"NSW RFS and FRNSW Air Operations","Supports aerial firefighting with helicopters and planes.",No
+"National Aerial Firefighting Centre (NAFC) Crews","Manages contracts for firefighting aircraft used across Australia.",No
+"State Emergency Service (SES) Fire Support","Assists with firefighting during major emergencies and natural disasters.",No
+"NSW Parks and Wildlife Service (NPWS) Fire Crews","Protects national parks and conservation areas from bushfires.",No
