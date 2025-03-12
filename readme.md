@@ -2,6 +2,11 @@
 
 Autonomous Detection, Response & Recovery
 
+Controlled hazard burns are a key bushfire mitigation strategy, involving the deliberate burning of vegetation to lower bushfire risks.
+Accurately identifying high-risk areas for these burns remains a challenge. Execution of controlled burns requires careful coordination of resources, including fire crews, trucks, aerial support, and protective equipment. 
+
+This Watsonx.ai and CrewAI based Agentic AI application helps to identify the high-risk areas and to schedule proactively the timing and resources required to conduct the controlled burns to reduce the risk.
+
 
 #### Architecture
 
@@ -12,11 +17,11 @@ Autonomous Detection, Response & Recovery
 <img src="images/home.png">
 
 
-## Prerequisite
+## 1. Installation
+
+#### Prerequisite
 
 Python 3.x should be installed and available.
-
-## 1. Installation
 
 #### 1.1 Download this repo
 
